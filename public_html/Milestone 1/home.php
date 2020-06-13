@@ -47,5 +47,5 @@ li a:hover:not(.active) {
   <li style="float:right"><a href="logout.php">Logout</a></li>
 </ul>
 <h1>Welcome to MTBank!</h1>
-<h2>Hello, <input type="text" name="name" value="<?php echo htmlspecialchars($name);?>" /></h2>
+<h2>Hello, <input type="text" name="name" value="<?php echo htmlspecialchars($_SESSION["first_name"]);?>" /></h2>
 <p>"Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver." -Ayn Rand</p>
