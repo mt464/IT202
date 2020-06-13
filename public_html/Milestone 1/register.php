@@ -39,16 +39,15 @@ li a:hover:not(.active) {
 </ul>
 <h1>Register</h1>
 
-
 <form method="POST">
     <label for="email">Email
         <input type="email" id="email" name="email" autocomplete="off" />
     </label>
 	<label for="p">First Name
-        <input type="first_name" id="p" name="first_name" autocomplete="off"/>
+        <input type="first_name" id="f" name="first_name" autocomplete="off"/>
     </label>
 	<label for="p">Last Name
-        <input type="last_name" id="p" name="last_name" autocomplete="off"/>
+        <input type="last_name" id="l" name="last_name" autocomplete="off"/>
     </label>
     <label for="p">Password
         <input type="password" id="p" name="password" autocomplete="off"/>
@@ -64,11 +63,13 @@ li a:hover:not(.active) {
 //echo var_export($_POST, true);
 //echo var_export($_REQUEST, true);
 if(isset($_POST["register"])){
-    if(isset($_POST["password"]) && isset($_POST["cpassword"]) && isset($_POST["email"])){
+    if(isset($_POST["password"]) && isset($_POST["cpassword"]) && isset($_POST["email"]) && isset($_POST["first_name"]) && isset($_POST["last_name"])){
         $password = $_POST["password"];
         $cpassword = $_POST["cpassword"];
         $email = $_POST["email"];
-				if($email == ""){
+		$first_name = $_POST["first_name"];
+		$last_name = $_POST["last_name"];
+		if($email == ""){
 			echo "No Email Entered";
 			goto end;
 		}
@@ -83,7 +84,7 @@ if(isset($_POST["register"])){
             try{
                 $db = new PDO($connection_string, $dbuser, $dbpass);
                 $hash = password_hash($password, PASSWORD_BCRYPT);
-                $stmt = $db->prepare("INSERT INTO Users (email, password) VALUES(:email, :password)");
+                $stmt = $db->prepare("INSERT INTO Users (email, password, first_name, last_name) VALUES(:email, :password, :first_name, :last_name)");
                 $stmt->execute(array(
                     ":email" => $email,
                     ":password" => $hash//Don't save the raw password $password
