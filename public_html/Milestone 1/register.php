@@ -87,7 +87,9 @@ if(isset($_POST["register"])){
                 $stmt = $db->prepare("INSERT INTO Users (email, password, first_name, last_name) VALUES(:email, :password, :first_name, :last_name)");
                 $stmt->execute(array(
                     ":email" => $email,
-                    ":password" => $hash//Don't save the raw password $password
+                    ":password" => $hash,
+					":first_name" => $first_name,
+					":last_name" => $last_name
                 ));
                 $e = $stmt->errorInfo();
                 if($e[0] != "00000"){
