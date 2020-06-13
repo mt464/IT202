@@ -38,7 +38,7 @@ if(isset($_POST["login"])){
                             "first_name"=>$result["first_name"],
                             "last_name"=>$result["last_name"]
                         );
-                        echo "<a href='home.php'>Go to home page</a>";
+                        header("location: home.php");
                     }
                     else{
                         echo "<div>Invalid password!</div>";
