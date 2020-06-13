@@ -46,19 +46,17 @@ li a:hover:not(.active) {
   <li><a class="active" href="#contact">Contact</a></li>
   <li style="float:right"><a href="logout.php">Logout</a></li>
 </ul>
-<br>
-<br>
 <div class="center">
 <h1>Contact Us</h1>
-<p>Please feel free to contact us at (888) 555-5555 during our normal business hours
+<p>Please feel free to contact us at (888)555-5555 during our normal business hours
 <br>
 <br>MON:	9:00AM-5:00pm
 <br>TUES:	9:00AM-5:00pm
 <br>WED:	9:00AM-5:00pm
 <br>THURS:	9:00AM-5:00pm
 <br>FRI:	9:00AM-5:00pm
-<br>SAT:	9:00AM-2:00pm
-<br>SUN:	CLOSED
+<br>SAT		9:00AM-2:00pm
+<br>SUN		CLOSED
 <br>
 <br>If you need to contact us outide of business hours, please feel free to reach out to our support email: Support@MTBank.com.
 </div>

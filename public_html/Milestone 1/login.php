@@ -38,6 +38,7 @@ li a:hover:not(.active) {
   <li><a href="register.php">Register</a></li>
 </ul>
 <h1>Login</h1>
+<p>This is where the users accounts would be shown</p>
 
 <form method="POST">
     <label for="email">Email

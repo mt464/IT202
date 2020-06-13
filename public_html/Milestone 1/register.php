@@ -38,6 +38,7 @@ li a:hover:not(.active) {
   <li><a class="active" href="register.php">Register</a></li>
 </ul>
 <h1>Register</h1>
+<p>This is where the users accounts would be shown</p>
 
 <form method="POST">
     <label for="email">Email
@@ -67,6 +68,14 @@ if(isset($_POST["register"])){
         $password = $_POST["password"];
         $cpassword = $_POST["cpassword"];
         $email = $_POST["email"];
+		if($email == NULL){
+			echo "No Email Entered";
+			exit();
+		}
+		if($password == NULL){
+			echo "No Password Entered";
+			exit()
+		}
         if($password == $cpassword){
             //echo "<div>Passwords Match</div>";
             require("config.php");
