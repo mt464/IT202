@@ -46,8 +46,8 @@ li a:hover:not(.active) {
 </head>
 <body>
 <ul>
-  <li><a href="contact.php">Contact</a></li>
   <li><a href="login.php">Login</a></li>
+  <li><a href="contact.php">Contact</a></li>
 </ul>
 <h1>Come back soon!</h1>
-<p>"You have been logged out</p>
+<p>You have been logged out</p>

@@ -37,7 +37,7 @@ li a:hover:not(.active) {
 </head>
 <body>
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="home.php">Home</a></li>
   <li><a href="accounts.php">Accounts</a></li>
   <li><a class="active" href="#contact">Contact</a></li>
   <li style="float:right"><a href="logout.php">Logout</a></li>
@@ -53,5 +53,5 @@ li a:hover:not(.active) {
 <br>SAT		9:00AM-2:00pm
 <br>SUN		CLOSED
 <br>
-<br>If you need to contact us ourtide of business hours, please feel free to reash out to out support email, Support@@MTBank.com.
+<br>If you need to contact us outide of business hours, please feel free to reach out to our support email: Support@MTBank.com.
 </p>
