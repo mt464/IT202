@@ -31,13 +31,13 @@ if(isset($_POST["login"])){
                 if ($result){
                     $rpassword = $result["password"];
                     if(password_verify($password, $rpassword)){
-                        echo "<div>Passwords matched! You are technically logged in!</div>";
                         $_SESSION["user"] = array(
                             "id"=>$result["id"],
                             "email"=>$result["email"],
                             "first_name"=>$result["first_name"],
                             "last_name"=>$result["last_name"]
                         );
+						$_SESSION['loggedin'] = true;
                         header("location: home.php");
                     }
                     else{
