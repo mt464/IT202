@@ -44,10 +44,16 @@ li a:hover:not(.active) {
     <label for="email">Email
         <input type="email" id="email" name="email" autocomplete="off" />
     </label>
+	<label for="p">First Name
+        <input type="first_name" id="p" name="first_name" autocomplete="off"/>
+    </label>
+	<label for="p">Last Name
+        <input type="last_name" id="p" name="last_name" autocomplete="off"/>
+    </label>
     <label for="p">Password
         <input type="password" id="p" name="password" autocomplete="off"/>
     </label>
-    <label for="cp">Confirm Password
+	<label for="cp">Confirm Password
         <input type="password" id="cp" name="cpassword"/>
     </label>
     <input type="submit" name="register" value="Register"/>

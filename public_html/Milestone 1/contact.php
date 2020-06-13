@@ -33,6 +33,10 @@ li a:hover:not(.active) {
 .active {
   background-color: #0000FF;
 }
+.center {
+  text-align: center;
+  border: 3px solid Blue;
+}
 </style>
 </head>
 <body>
@@ -42,6 +46,7 @@ li a:hover:not(.active) {
   <li><a class="active" href="#contact">Contact</a></li>
   <li style="float:right"><a href="logout.php">Logout</a></li>
 </ul>
+<div class="center">
 <h1>Contact Us</h1>
 <p>Please feel free to contact us at (888)555-5555 during our normal business hours
 <br>
@@ -54,4 +59,5 @@ li a:hover:not(.active) {
 <br>SUN		CLOSED
 <br>
 <br>If you need to contact us outide of business hours, please feel free to reach out to our support email: Support@MTBank.com.
+</div>
 </p>

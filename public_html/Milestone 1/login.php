@@ -1,3 +1,45 @@
+<head>
+<style>
+	body{background-color: white;
+}
+
+h1{
+	color: blue;
+	margin-left: 50px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #111;
+}
+.active {
+  background-color: #0000FF;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li><a class="active" href="login.php">Login</a></li>
+  <li><a href="register.php">Register</a></li>
+</ul>
+<h1>Login</h1>
+<p>This is where the users accounts would be shown</p>
+
 <form method="POST">
     <label for="email">Email
         <input type="email" id="email" name="email" autocomplete="off" />
@@ -55,44 +97,3 @@ if(isset($_POST["login"])){
     }
 }
 ?>
-<head>
-<style>
-	body{background-color: white;
-}
-
-h1{
-	color: blue;
-	margin-left: 50px;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-li {
-  float: left;
-}
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-li a:hover:not(.active) {
-  background-color: #111;
-}
-.active {
-  background-color: #0000FF;
-}
-</style>
-</head>
-<body>
-<ul>
-  <li><a class="active" href="login.php">Login</a></li>
-  <li><a href="register.php">Register</a></li>
-</ul>
-<h1>Login</h1>
-<p>This is where the users accounts would be shown</p>
