@@ -68,14 +68,6 @@ if(isset($_POST["register"])){
         $password = $_POST["password"];
         $cpassword = $_POST["cpassword"];
         $email = $_POST["email"];
-		if($email == NULL){
-			echo "No Email Entered";
-			exit();
-		}
-		if($password == NULL){
-			echo "No Password Entered";
-			exit()
-		}
         if($password == $cpassword){
             //echo "<div>Passwords Match</div>";
             require("config.php");
@@ -89,6 +81,14 @@ if(isset($_POST["register"])){
                     ":password" => $hash//Don't save the raw password $password
                 ));
                 $e = $stmt->errorInfo();
+				if($email == NULL){
+					echo "No Email Entered";
+					exit();
+				}
+				if($password == NULL){
+					echo "No Password Entered";
+					exit()
+				}
                 if($e[0] != "00000"){
                     echo var_export($e, true);
                 }
