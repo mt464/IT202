@@ -39,8 +39,19 @@ li a:hover:not(.active) {
 <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="accounts.php">Accounts</a></li>
-  <li><a href="contact.php">Contact</a></li>
+  <li><a class="active" href="#contact">Contact</a></li>
   <li style="float:right"><a href="logout.php">Logout</a></li>
 </ul>
-<h1>Welcome to MTBank!</h1>
-<p>"Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver." -Ayn Rand</p>
+<h1>Contact Us</h1>
+<p>Please feel free to contact us at (888)555-5555 during our normal business hours
+<br>
+<br>MON:	9:00AM-5:00pm
+<br>TUES:	9:00AM-5:00pm
+<br>WED:	9:00AM-5:00pm
+<br>THURS:	9:00AM-5:00pm
+<br>FRI:	9:00AM-5:00pm
+<br>SAT		9:00AM-2:00pm
+<br>SUN		CLOSED
+<br>
+<br>If you need to contact us ourtide of business hours, please feel free to reash out to out support email, Support@@MTBank.com.
+</p>

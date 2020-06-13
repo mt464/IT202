@@ -37,10 +37,10 @@ li a:hover:not(.active) {
 </head>
 <body>
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="accounts.php">Accounts</a></li>
+  <li><a href="#home">Home</a></li>
+  <li><a class="active" href="accounts.php">Accounts</a></li>
   <li><a href="contact.php">Contact</a></li>
   <li style="float:right"><a href="logout.php">Logout</a></li>
 </ul>
-<h1>Welcome to MTBank!</h1>
-<p>"Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver." -Ayn Rand</p>
+<h1>Accounts</h1>
+<p>This is where the users accounts would be shown</p>
