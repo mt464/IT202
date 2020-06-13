@@ -10,9 +10,6 @@
 
 <?php
 session_start();
-//echo var_export($_GET, true);
-//echo var_export($_POST, true);
-//echo var_export($_REQUEST, true);
 if(isset($_POST["login"])){
     if(isset($_POST["password"]) && isset($_POST["email"])){
         $password = $_POST["password"];
@@ -41,7 +38,6 @@ if(isset($_POST["login"])){
                             "first_name"=>$result["first_name"],
                             "last_name"=>$result["last_name"]
                         );
-                        echo var_export($_SESSION, true);
                         echo "<a href='home.php'>Go to home page</a>";
                     }
                     else{
