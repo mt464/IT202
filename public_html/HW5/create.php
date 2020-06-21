@@ -1,31 +1,31 @@
 <form method="POST">
 	<label for="t">Account Type
-	<input type="text" id="t" name="type" />
+	<input type="text" id="t" name="atype" />
 	</label>
 	<label for="b">Balance
 	<input type="number" id="b" name="balance" />
 	</label>
 	<label for="n">Account Number
-	<input type="number" id="n" name="number" />
+	<input type="number" id="n" name="ac" />
 	</label>
 	<input type="submit" name="create" value="Create Account"/>
 </form>
 
 <?php
 if(isset($_POST["create"])){
-    $type = $_POST["type"];
+    $atype = $_POST["atype"];
     $balance = $_POST["balance"];
-	$number = $_POST["number"];
-    if(!empty($type) && !empty($balance) && !empty($number)){
+	$ac = $_POST["ac"];
+    if(!empty($atype) && !empty($balance) && !empty($ac)){
         require("config.php");
         $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
             $db = new PDO($connection_string, $dbuser, $dbpass);
-            $stmt = $db->prepare("INSERT INTO BankAccounts (AccountType, Balance, AccountNumber) VALUES (:type, :balance, :number)");
+            $stmt = $db->prepare("INSERT INTO BankAccounts (AccountType, Balance, AccountNumber) VALUES(:atype, :balance, :ac)");
             $result = $stmt->execute(array(
-                ":type" => $type,
-                ":balance" => $balance
-				":number" => $number
+                ":atype" => $atype,
+                ":balance" => $balance,
+				":ac" => $ac
             ));
             $e = $stmt->errorInfo();
             if($e[0] != "00000"){
@@ -34,7 +34,7 @@ if(isset($_POST["create"])){
             else{
                 echo var_export($result, true);
                 if ($result){
-                    echo "Successfully inserted new account. Type: " . $type;
+                    echo "Successfully inserted new account. Type: " . $atype;
                 }
                 else{
                     echo "Error inserting record";
