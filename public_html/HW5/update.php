@@ -37,7 +37,7 @@ if(isset($_POST["Update"])){
 	$ac = $_POST["ac"];
     if(!empty($atype) && !empty($ac)){
         try{
-            $stmt = $db->prepare("UPDATE BankAccounts set AccountType = :atype, Balance = :balance, AccountNumber = :ac)");
+            $stmt = $db->prepare("UPDATE BankAccounts set AccountType = :atype, Balance = :balance, AccountNumber = :ac where id=:id");
             $result = $stmt->execute(array(
                 ":atype" => $atype,
                 ":balance" => $balance,
