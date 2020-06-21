@@ -31,7 +31,6 @@ if(isset($_POST["create"])){
             if($e[0] != "00000"){
             }
             else{
-                echo var_export($result, true);
                 if ($result){
                     echo "Successfully inserted new account. Type: " . $atype;
                 }
