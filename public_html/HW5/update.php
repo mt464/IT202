@@ -19,13 +19,13 @@ if(isset($_GET["thingId"])){
 ?>
 <form method="POST">
 	<label for="t">Account Type
-	<input type="text" id="t" name="atype" value="<?php echo get($result, "AccountType");?>" />/>
+	<input type="text" id="t" name="atype" value="<?php echo get($result, "AccountType");?>" />
 	</label>
 	<label for="b">Balance
-	<input type="number" id="b" name="balance" value="<?php echo get($result, "Balance");?>" />/>
+	<input type="number" id="b" name="balance" value="<?php echo get($result, "Balance");?>" />
 	</label>
 	<label for="n">Account Number
-	<input type="number" id="n" name="ac" value="<?php echo get($result, "AccountNumber");?>" />/>
+	<input type="number" id="n" name="ac" value="<?php echo get($result, "AccountNumber");?>" />
 	</label>
 	<input type="submit" name="Update" value="Update Account"/>
 </form>
