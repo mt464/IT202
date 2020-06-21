@@ -8,11 +8,11 @@
 	<label for="n">Account Number
 	<input type="number" id="n" name="number" />
 	</label>
-	<input type="submit" name="created" value="Create Account"/>
+	<input type="submit" name="create" value="Create Account"/>
 </form>
 
 <?php
-if(isset($_POST["created"])){
+if(isset($_POST["create"])){
     $type = $_POST["type"];
     $balance = $_POST["balance"];
 	$number = $_POST["number"];
