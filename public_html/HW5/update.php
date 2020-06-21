@@ -42,6 +42,7 @@ if(isset($_POST["Update"])){
                 ":atype" => $atype,
                 ":balance" => $balance,
 				":ac" => $ac
+				":id" => $thingId
             ));
             $e = $stmt->errorInfo();
             if($e[0] != "00000"){
