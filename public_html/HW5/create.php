@@ -16,7 +16,7 @@ if(isset($_POST["create"])){
     $atype = $_POST["atype"];
     $balance = $_POST["balance"];
 	$ac = $_POST["ac"];
-    if(!empty($atype) && !empty($balance) && !empty($ac)){
+    if(!empty($atype) && !empty($ac)){
         require("config.php");
         $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try{
@@ -29,7 +29,6 @@ if(isset($_POST["create"])){
             ));
             $e = $stmt->errorInfo();
             if($e[0] != "00000"){
-                echo var_export($e, true);
             }
             else{
                 echo var_export($result, true);
@@ -42,11 +41,10 @@ if(isset($_POST["create"])){
             }
         }
         catch (Exception $e){
-            echo $e->getMessage();
         }
     }
     else{
-        echo "type, balance, and account must not be empty.";
+        echo "type, and account must not be empty.";
     }
 }
 ?>
