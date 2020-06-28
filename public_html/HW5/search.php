@@ -16,8 +16,10 @@ if(isset($search)) {
     require("common.inc.php");
     if(checkedCount === 0) {
     $query = file_get_contents(__DIR__ . "/queries/listasc.sql");
+	echo "1";
 	} else {
 	$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
+	echo "2";
 	}
     if (isset($query) && !empty($query)) {
         try {
