@@ -16,10 +16,10 @@ if(isset($_POST["search"])){
 if(isset($search)) {
 
 	if(isset($_POST['checkedCount']) && $_POST['checkedCount'] == 2){ 
-		$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
+		$query = file_get_contents(__DIR__ . "SELECT * FROM BankAccounts WHERE AccountType CONCAT('%', :thing, '%') ORDER BY DESC");
 		echo "2";
 	}else{
-		$query = file_get_contents(__DIR__ . "/queries/listasc.sql");
+		$query = file_get_contents(__DIR__ . "SELECT * FROM BankAccounts WHERE AccountType CONCAT('%', :thing, '%') ORDER BY ASC");
 		echo "1";
 	}
 	if (isset($query) && !empty($query)) {
