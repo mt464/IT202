@@ -17,13 +17,11 @@ if(isset($search)) {
 
     require("common.inc.php");
 	if(isset($_POST['checkedCount']) && $_POST['checkedCount'] == 2){ 
-		if(checkedCount == 2) {
-			$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
-			echo "2";
-		}else{
-			$query = file_get_contents(__DIR__ . "/queries/listasc.sql");
-			echo "1";
-		}
+		$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
+		echo "2";
+	}else{
+		$query = file_get_contents(__DIR__ . "/queries/listasc.sql");
+		echo "1";
 	}
 	if (isset($query) && !empty($query)) {
 		try {
