@@ -1,1 +1,1 @@
-SELECT * FROM BankAccounts WHERE AccountNumber equals :thing ORDER BY DESC
+SELECT * FROM BankAccounts WHERE AccountNumber CONCAT('%', :thing, '%') ORDER BY DESC
