@@ -8,8 +8,8 @@ if(isset($_POST["search"])){
 <form method="POST">
     <input type="text" name="search" placeholder="Search for Account" value="<?php echo $search;?>"/><br>
 	
-	<input type="checkbox" id="checkedCount" name="checkedCount" value=0> <label for="checkedCount"> Ascending Order?</label><br>
-	<input type="checkbox" id="checkedCount" name="checkedCount" value=1> <label for="checkedCount"> Descending Order?</label><br>
+	<input type="checkbox" id="checkedCount" name="checkedCount" value=1> <label for="checkedCount"> Ascending Order?</label><br>
+	<input type="checkbox" id="checkedCount" name="checkedCount" value=2> <label for="checkedCount"> Descending Order?</label><br>
 
     <input type="submit" value="Search"/>
 </form>
@@ -17,11 +17,11 @@ if(isset($_POST["search"])){
 if(isset($search)) {
 
     require("common.inc.php");
-    if(checkedCount == 0) {
+    if(checkedCount == 1) {
     $query = file_get_contents(__DIR__ . "/queries/listasc.sql");
 	echo "1";
 	} 
-	if(checkedCount == 1) {
+	if(checkedCount == 2) {
 	$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
 	echo "2";
 	}
