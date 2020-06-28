@@ -1,5 +1,6 @@
 <?php
 $search = "";
+checkedCount=0;
 if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
@@ -17,7 +18,7 @@ if(isset($search)) {
     if(checkedCount === 0) {
     $query = file_get_contents(__DIR__ . "/queries/listasc.sql");
 	echo "1";
-	} else {
+	} elseif(checkedCount = 1) {
 	$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
 	echo "2";
 	}
