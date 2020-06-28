@@ -15,10 +15,10 @@ if(isset($_POST["search"])){
 if(isset($search)) {
 
     require("common.inc.php");
-    if(checkedCount = 0) {
+    if(checkedCount == 0) {
     $query = file_get_contents(__DIR__ . "/queries/listasc.sql");
 	echo "1";
-	} elseif(checkedCount = 1) {
+	} elseif(checkedCount == 1) {
 	$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
 	echo "2";
 	}
