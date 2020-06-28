@@ -7,7 +7,7 @@ if(isset($_POST["search"])){
 <form method="POST">
     <input type="text" name="search" placeholder="Search for Account" value="<?php echo $search;?>"/>
 	
-	<input type="checkbox" id="Descending order" name="order" value="1"> <label for="Descending order"> Descending Order?</label><br>
+	<input type="checkbox" id="checkedCount" name="checkedCount" value="1"> <label for="checkedCount"> Descending Order?</label><br>
     <input type="submit" value="Search"/>
 </form>
 <?php
