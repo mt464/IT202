@@ -19,7 +19,8 @@ if(isset($search)) {
     if(checkedCount == 0) {
     $query = file_get_contents(__DIR__ . "/queries/listasc.sql");
 	echo "1";
-	} else {
+	} 
+	if(checkedCount == 1) {
 	$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
 	echo "2";
 	}

@@ -1,1 +1,1 @@
-SELECT * FROM BankAccounts WHERE AccountNumber like :thing ORDER BY DESC
+SELECT * FROM BankAccounts WHERE AccountNumber equals :thing ORDER BY DESC

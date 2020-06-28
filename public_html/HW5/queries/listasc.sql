@@ -1,1 +1,1 @@
-SELECT * FROM BankAccounts WHERE AccountNumber like :thing ORDER BY ASC
+SELECT * FROM BankAccounts WHERE AccountNumber equals :thing ORDER BY ASC
