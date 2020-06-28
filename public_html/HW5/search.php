@@ -15,7 +15,6 @@ if(isset($_POST["search"])){
 <?php
 if(isset($search)) {
 
-    require("common.inc.php");
 	if(isset($_POST['checkedCount']) && $_POST['checkedCount'] == 2){ 
 		$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
 		echo "2";
@@ -24,11 +23,12 @@ if(isset($search)) {
 		echo "1";
 	}
 	if (isset($query) && !empty($query)) {
+		require("config.php");
+		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 		try {
-			$stmt = getDB()->prepare($query);
-			//Note: With a LIKE query, we must pass the % during the mapping
+			$db = new PDO($connection_string, $dbuser, $dbpass);
+			$stmt = $db->prepare($query);
 			$stmt->execute([":thing"=>$search]);
-			//Note the fetchAll(), we need to use it over fetch() if we expect >1 record
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		} catch (Exception $e) {
 			echo $e->getMessage();
@@ -36,9 +36,7 @@ if(isset($search)) {
     }
 }
 ?>
-<!--This part will introduce us to PHP templating,
-note the structure and the ":" -->
-<!-- note how we must close each check we're doing as well-->
+
 <?php if(isset($results) && count($results) > 0):?>
     <p>This shows when we have results</p>
     <ul>
