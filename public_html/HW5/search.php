@@ -18,10 +18,8 @@ if(isset($search)) {
 
 	if(isset($_POST['checkedCount']) && $_POST['checkedCount'] == 2){ 
 		$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
-		echo "2";
 	}else{
 		$query = file_get_contents(__DIR__ . "/queries/listasc.sql");
-		echo "1";
 	}
 	if (isset($query) && !empty($query)) {
 		require("config.php");
@@ -30,7 +28,8 @@ if(isset($search)) {
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 			$stmt = $db->prepare($query);
 			$stmt->execute([":thing"=>$search]);
-			$results = $stmt->fetchAll();
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			echo $results;
 			
 		} catch (Exception $e) {
 			echo $e->getMessage();
