@@ -23,7 +23,6 @@ if(isset($search)) {
 		$query = file_get_contents(__DIR__ . "/queries/listasc.sql");
 		echo "1";
 	}
-	echo $query;
 	if (isset($query) && !empty($query)) {
 		require("config.php");
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
@@ -45,11 +44,12 @@ if(isset($search)) {
     <ul>
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
-        <?php foreach($results as $row):?>
+        <?php foreach($results as $row1):?>
             <li>
-                <?php echo get($row, "AccountNumber");?>
-                <?php echo get($row, "Balance");?>
-                <a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a>
+                <?php echo get($row1, "AccountNumber");?>
+                <?php echo get($row1, "Balance");?>
+                <a href="delete.php?thingId=<?php echo get($row1, "id");?>">Delete</a>
+				<br><p>works</p>
             </li>
         <?php endforeach;?>
     </ul>
