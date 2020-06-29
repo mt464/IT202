@@ -31,9 +31,7 @@ if(isset($search)) {
 			$stmt = $db->prepare($query);
 			$stmt->execute([":thing"=>$search]);
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			foreach($results['data'] as $result) {
-			echo $result['type'], '<br>';
-}
+			
 		} catch (Exception $e) {
 			echo $e->getMessage();
         }
@@ -41,7 +39,7 @@ if(isset($search)) {
 }
 ?>
 
-<?php if(isset($results) && count($results) > 0):?>
+<?php if(isset($results)):?>
     <p>This shows when we have results</p>
     <ul>
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
