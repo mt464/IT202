@@ -46,7 +46,7 @@ if(isset($search)) {
         we're also using our helper function to safely return a value based on our key/column name.-->
         <?php foreach($results as $row):?>
             <li>
-                <?php echo get($row, "AccountNumber")?>
+                <?php echo test;?>
                 <?php echo get($row, "Balance");?>
                 <a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a>
             </li>
