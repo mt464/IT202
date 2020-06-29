@@ -46,7 +46,7 @@ if(isset($search)) {
             <li>
                 <?php echo get($row1, "AccountNumber");?>
                 <?php echo get($row1, "Balance");?>
-                <a href="delete.php?thingId=<?php echo get($row1, "id");?>">Delete</a>
+                <a href="delete1.php?thingId=<?php echo get($row1, "id");?>">Delete</a>
             </li>
         <?php endforeach;?>
     </ul>

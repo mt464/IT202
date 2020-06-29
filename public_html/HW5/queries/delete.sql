@@ -1,0 +1,1 @@
+DELETE * FROM BankAccounts WHERE ID = :id
