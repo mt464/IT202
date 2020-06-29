@@ -14,7 +14,7 @@ if(isset($_POST["search"])){
 </form>
 <?php
 if(isset($search)) {
-	require("common.inc.php");
+
 
 	if(isset($_POST['checkedCount']) && $_POST['checkedCount'] == 2){ 
 		$query = file_get_contents(__DIR__ . "/queries/listdesc.sql");
@@ -27,11 +27,13 @@ if(isset($search)) {
 		require("config.php");
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 		try {
-			$stmt = getDB()->prepare($query);
-            //Note: With a LIKE query, we must pass the % during the mapping
-            $stmt->execute([":thing"=>$search]);
-            //Note the fetchAll(), we need to use it over fetch() if we expect >1 record
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			$db = new PDO($connection_string, $dbuser, $dbpass);
+			$stmt = $db->prepare($query);
+			$stmt->execute([":thing"=>$search]);
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			foreach($results['data'] as $result) {
+			echo $result['type'], '<br>';
+}
 		} catch (Exception $e) {
 			echo $e->getMessage();
         }
