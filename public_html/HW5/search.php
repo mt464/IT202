@@ -28,12 +28,7 @@ if(isset($search)) {
 			$db = new PDO($connection_string, $dbuser, $dbpass);
 			$stmt = $db->prepare($query);
 			$stmt->execute([":thing"=>$search]);
-			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			echo $results;
-			foreach($results as $value){
-				echo $value . "<br>";
-				print_r ($value);
-			}
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);			
 			
 		} catch (Exception $e) {
 			echo $e->getMessage();
@@ -52,7 +47,6 @@ if(isset($search)) {
                 <?php echo get($row1, "AccountNumber");?>
                 <?php echo get($row1, "Balance");?>
                 <a href="delete.php?thingId=<?php echo get($row1, "id");?>">Delete</a>
-				<br><p>works</p>
             </li>
         <?php endforeach;?>
     </ul>
