@@ -32,6 +32,7 @@ if(isset($search)) {
 			echo $results;
 			foreach($results as $value){
 				echo $value . "<br>";
+				print_r ($value);
 			}
 			
 		} catch (Exception $e) {
