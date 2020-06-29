@@ -32,7 +32,7 @@ if(isset($search)) {
 			echo $results;
 			foreach($results as $value){
 				echo $value . "<br>";
-				print_r (get($value,"AccountNumber");
+				print_r (array_filter($value,"AccountNumber"));
 			}
 			
 		} catch (Exception $e) {
