@@ -1,1 +1,1 @@
-SELECT * FROM BankAccounts WHERE AccountNumber like '%22%' ORDER BY Balance ASC
+SELECT * FROM BankAccounts WHERE AccountNumber like CONCAT('%', :thing, '%') ORDER BY Balance ASC
