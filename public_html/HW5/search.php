@@ -30,7 +30,9 @@ if(isset($search)) {
 			$stmt = $db->prepare($query);
 			$stmt->execute([":thing"=>$search]);
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			echo $results;
+			foreach($results['data'] as $result) {
+			echo $result['type'], '<br>';
+}
 		} catch (Exception $e) {
 			echo $e->getMessage();
         }
