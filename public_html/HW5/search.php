@@ -30,7 +30,7 @@ if(isset($search)) {
 			$stmt = $db->prepare($query);
 			$stmt->execute([":thing"=>$search]);
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			echo "9";
+			echo $results;
 		} catch (Exception $e) {
 			echo $e->getMessage();
         }
