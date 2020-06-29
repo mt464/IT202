@@ -1,1 +1,1 @@
-SELECT * FROM BankAccounts WHERE AccountNumber like '%:22%' ORDER BY AccountNumber DESC
+SELECT * FROM BankAccounts WHERE AccountNumber like '%22%' ORDER BY Balance DESC
