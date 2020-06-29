@@ -23,6 +23,7 @@ if(isset($search)) {
 		$query = file_get_contents(__DIR__ . "/queries/listasc.sql");
 		echo "1";
 	}
+	echo $query;
 	if (isset($query) && !empty($query)) {
 		require("config.php");
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
