@@ -39,14 +39,14 @@ if(isset($search)) {
 }
 ?>
 
-<?php if(isset($results)):?>
+<?php if(isset($results) && count($results) > 0):?>
     <p>This shows when we have results</p>
     <ul>
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
         <?php foreach($results as $row):?>
             <li>
-                <?php echo test;?>
+                <?php echo get($row, "AccountNumber");?>
                 <?php echo get($row, "Balance");?>
                 <a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a>
             </li>
