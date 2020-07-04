@@ -1,5 +1,5 @@
 <html>
-<canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
+<canvas id="canvas" width="600" height="600" tabindex="1"></canvas>
 </html>
 <style>
 #canvas {
@@ -137,7 +137,7 @@ function endGame() {
   context.fillStyle = '#000000';
   context.font = '36px Arial';
   context.textAlign = 'center';
-  context.fillText('Game Over: ' + score, canvas.width / 2, canvas.height / 1);
+  context.fillText('Game Over', canvas.width / 2, canvas.height / 3);
   context.font = '24px Arial';
   context.fillText('Final Score: ' + score, canvas.width / 2, canvas.height / 2);
 }
