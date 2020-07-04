@@ -2,7 +2,6 @@
 <html>
 <head>
     <script>
-
 // Collect The Square game
 
 // Get a reference to the canvas DOM element
@@ -102,27 +101,27 @@ function menu() {
 
 // Start the game
 function startGame() {
-	// Reduce the countdown timer ever second
+  // Reduce the countdown timer ever second
   id = setInterval(function() {
     countdown--;
   }, 1000)
-  
+
   // Stop listening for click events
   canvas.removeEventListener('click', startGame);
-  
+
   // Put the target at a random starting point
-	moveTarget();
-	
+  moveTarget();
+
   // Put the bad square at a random starting point
-  	moveTargetb();
-	
+  moveTargetb();
+
   // Kick off the draw loop
   draw();
 }
 
 // Show the game over screen
 function endGame() {
-	// Stop the countdown
+  // Stop the countdown
   clearInterval(id);
   // Display the final score
   erase();
@@ -185,46 +184,48 @@ function draw() {
       // Respawn the target
       moveTarget();
       // Increase the score
-      score++;
-      if(score % 5 = 0){
+      if (score % 5 == 0) {
         speed++;
       }
       score++;
-      targetLength=(targetLength-2);
+      targetLength = (targetLength - 1);
+      moveTargetb();
     }
   }
   // Collide with the bad square
-  if (isWithin(targetbX, x, x + sideLength) || isWithin(targebtX + targetbLength, x, x + sideLength)) { // X
-     f (isWithin(targetbY, y, y + sideLength) || isWithin(targetbY + targetbLength, y, y + sideLength)) { // Y
+  if (isWithin(targetbX, x, x + sideLength) || isWithin(targetbX + targetbLength, x, x + sideLength)) { // X
+  	if (isWithin(targetbY, y, y + sideLength) || isWithin(targetbY + targetbLength, y, y + sideLength)) { // Y
       // Respawn the target
       moveTargetb();
       // Increase the score
       score--;
       lives--;
-      speed=(speed - 2);
+      speed = (speed - 2);
     }
   }
+  
   // Draw the square
   context.fillStyle = '#FF0000';
   context.fillRect(x, y, sideLength, sideLength);
-  
+
   // Draw the target 
   context.fillStyle = '#00FF00';
   context.fillRect(targetX, targetY, targetLength, targetLength);
-  
+
   // Draw the bad square
   context.fillStyle = '#000000';
   context.fillRect(targetbX, targetbY, targetbLength, targetbLength);
-  
+
   // Draw the score, time remaining, and lives
   context.fillStyle = '#000000';
   context.font = '24px Arial';
   context.textAlign = 'left';
   context.fillText('Score: ' + score, 10, 24);
   context.fillText('Time Remaining: ' + countdown, 10, 50);
-  context.fillText('Lives: ' + lives, 10, 24);
+  context.fillText('Lives: ' + lives, 10, 75);
+  context.fillText('Speed: ' + speed, 10, 100);
   // End the game or keep playing
-  if (countdown <= 0 || lives = 0) {
+  if (countdown <= 0 || lives == 0) {
     endGame();
   } else {
     window.requestAnimationFrame(draw);
@@ -234,3 +235,13 @@ function draw() {
 // Start the game
 menu();
 canvas.focus();
+</script>
+</head>
+<body onload="init();">
+<main>
+    <canvas id="board" width="600px" height="600px" style="border: 1px solid black;">
+
+    </canvas>
+</main>
+</body>
+</html>
