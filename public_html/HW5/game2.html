@@ -1,7 +1,28 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <script>
+    <style>
+        #center{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            align-content:center;
+            text-align:center;
+
+            height:99%;
+            padding:0px;
+        }
+        canvas, body{
+            padding: 0px;
+            margin:0px;
+        }
+    </style>
+</head>
+<body>
+<div id="center">
+    <canvas id="canvas" width="550px" height="550px"></canvas>
+</div>
+<span id="endGame"></span>
+<script>
 // Collect The Square game
 
 // Get a reference to the canvas DOM element
@@ -238,13 +259,5 @@ function draw() {
 menu();
 canvas.focus();
 </script>
-</head>
-<body onload="init();">
-<a href="http://bencentra.com/2017-07-11-basic-html5-canvas-games.html">Collection of Canvas based games by Ben Centra</a>
-<main>
-    <canvas id="board" width="600px" height="600px" style="border: 1px solid black;">
-
-    </canvas>
-</main>
 </body>
 </html>
